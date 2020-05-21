@@ -3,7 +3,6 @@ package com.zfwhub.bill.service.impl;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -52,24 +51,41 @@ public class BillServiceImpl implements BillService {
                     predicates.add(criteriaBuilder.ge(root.get("amount"), billQuery.getMinAmount()));
                 }
                 if (billQuery.getMaxAmount() != null) {
-                    predicates.add(criteriaBuilder.le(root.get("amount"), Double.valueOf(billQuery.getMaxAmount())));
+                    predicates.add(criteriaBuilder.le(root.get("amount"), billQuery.getMaxAmount()));
                 }
-                // TODO 最好是不要直接调用函数
-                // TODO 处理时区的问题，临时处理。
+                // 最好是不要直接调用函数
+                // 处理时区的问题，临时处理。
                 Calendar startCalendar = Calendar.getInstance();
                 Calendar endCalendar = Calendar.getInstance();
                 
                 if (billQuery.getYear() != null) {
-                    predicates.add(criteriaBuilder.equal(criteriaBuilder.function("YEAR", Integer.class, root.get("time")), billQuery.getYear()));
+                    startCalendar.set(Calendar.YEAR, billQuery.getYear());
+                    endCalendar.set(Calendar.YEAR, billQuery.getYear());
+                    startCalendar.set(Calendar.DAY_OF_YEAR, 1);
+                    endCalendar.set(Calendar.MONTH, 11); // 11 = december
+                    endCalendar.set(Calendar.DAY_OF_MONTH, 31);
                 }
                 if (billQuery.getMonth() != null) {
-                    predicates.add(criteriaBuilder.equal(criteriaBuilder.function("MONTH", Integer.class, root.get("time")), billQuery.getMonth()));
+                    startCalendar.set(Calendar.MONTH, billQuery.getMonth()-1);
+                    endCalendar.set(Calendar.MONTH, billQuery.getMonth()-1);
+                    startCalendar.set(Calendar.DAY_OF_MONTH, 1);
+                    endCalendar.set(Calendar.DATE, startCalendar.getActualMaximum(Calendar.DATE));
                 }
                 if (billQuery.getDay() != null) {
-                    predicates.add(criteriaBuilder.equal(criteriaBuilder.function("Day", Integer.class, root.get("time")), billQuery.getDay()));
+                    startCalendar.set(Calendar.DATE, billQuery.getDay());
+                    endCalendar.set(Calendar.DATE, billQuery.getDay());
                 }
-                
-                
+                startCalendar.set(Calendar.HOUR_OF_DAY, 0);
+                startCalendar.set(Calendar.MINUTE, 0);
+                startCalendar.set(Calendar.SECOND, 0);
+                startCalendar.set(Calendar.MILLISECOND, 0);
+                endCalendar.set(Calendar.HOUR_OF_DAY, 23);
+                endCalendar.set(Calendar.MINUTE, 59);
+                endCalendar.set(Calendar.SECOND, 59);
+                endCalendar.set(Calendar.MILLISECOND, 999);
+                if (billQuery.getYear() != null && billQuery.getMonth() != null) {
+                    predicates.add(criteriaBuilder.between(root.get("time"), startCalendar.getTime(), endCalendar.getTime()));
+                }
                 if (billQuery.getCategoryId() != null && billQuery.getCategoryId() != "") {
                     predicates.add(criteriaBuilder.equal(root.get("category"), new Category(billQuery.getCategoryId())));
                 }
