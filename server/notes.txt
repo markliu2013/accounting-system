@@ -1,0 +1,5 @@
+在 Spring Boot 项目中使用 Swagger 文档
+https://www.ibm.com/developerworks/cn/java/j-using-swagger-in-a-spring-boot-project/index.html
+
+Documenting your REST API with Swagger and Springfox
+https://dimitr.im/documenting-rest-api-swagger-springfox

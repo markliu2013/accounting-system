@@ -1,0 +1,14 @@
+html {
+    font-size: 62.5%; /* for uses rem */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* footer stay bottom minimum */;
+}
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}

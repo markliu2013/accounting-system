@@ -1,0 +1,18 @@
+.ant-layout {
+    min-height: 100%;
+}
+.ant-layout-header {
+    background: #fff;
+}
+.ant-layout-sider {
+    background: #f0f2f5;
+}
+.ant-layout-content {
+    padding: 20px;
+}
+.ant-layout-sider {
+    padding: 20px;
+}
+.ant-upload.ant-upload-drag {
+    padding: 10px 0;
+}
