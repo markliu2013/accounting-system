@@ -15,5 +15,7 @@ public interface BillService {
     BillQueryResultDto query(BillQuery billQuery, Pageable page);
     
     boolean add(BillAddDto billAddDto);
+    
+    boolean deleteById(String id);
 
 }

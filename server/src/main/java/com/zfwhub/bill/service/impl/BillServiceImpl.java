@@ -147,4 +147,10 @@ public class BillServiceImpl implements BillService {
         return true;
     }
 
+    @Override
+    public boolean deleteById(String id) {
+        billRepository.delete(new Bill(id));
+        return true;
+    }
+
 }

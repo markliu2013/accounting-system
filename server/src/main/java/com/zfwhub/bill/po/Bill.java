@@ -31,14 +31,16 @@ public class Bill {
     
     public Bill() { }
     
+    public Bill(String id) {
+        this.id = id;
+    }
+
     public Bill(Integer type, Date time, Category category, Double amount) {
         this.type = type;
         this.time = time;
         this.category = category;
         this.amount = amount;
     }
-
-
 
     public String getId() {
         return id;

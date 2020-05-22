@@ -1,10 +1,10 @@
 import React from 'react';
 import { Layout, Divider } from 'antd';
 
-import BillTable from './BillTable'
-import BillUpload from './BillUpload'
-import BillAddForm from './BillAddForm'
-import BillSearchForm from './BillSearchForm'
+import BillTable from './BillTable';
+import BillUpload from './BillUpload';
+import BillAddForm from './BillAddForm';
+import BillSearchForm from './BillSearchForm';
 
 import 'antd/dist/antd.css';
 import './App.css';

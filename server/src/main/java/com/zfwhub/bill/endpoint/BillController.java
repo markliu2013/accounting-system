@@ -3,7 +3,9 @@ package com.zfwhub.bill.endpoint;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -53,9 +55,17 @@ public class BillController {
         return response;
     }
     
+    @ApiOperation(value = "添加账单", notes = "添加账单")
     @PostMapping("/")
-    public BaseResponse add(@RequestBody BillAddDto billAddDto) {
+    public BaseResponse handleAdd(@RequestBody BillAddDto billAddDto) {
         billService.add(billAddDto);
+        return new BaseResponse(true);
+    }
+    
+    @ApiOperation(value = "删除账单", notes = "删除账单")
+    @DeleteMapping("/{id}")
+    public BaseResponse handleDelete(@PathVariable("id") String id) {
+        billService.deleteById(id);
         return new BaseResponse(true);
     }
 

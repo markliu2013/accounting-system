@@ -10,3 +10,7 @@
 
 简单地统计并展示所选月份的收入和支出总金额。
 不能只在前端统计当前页。
+
+ant design bug?
+1. table, sortDirections: ['ascend' | 'descend'] 改变后，排序图标不显示
+2. table, datasource 的id变成对象。
