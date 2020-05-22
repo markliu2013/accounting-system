@@ -29,8 +29,8 @@ const BillUpload = () => {
                 setUploading(false);
                 if (data.success) {
                     message.success('上传成功');
-                    const { pagination, filters, sorter } = billTableState;
-                    handleBillTableChange(pagination, filters, sorter);
+                    const { pagination, filters, sorter, query } = billTableState;
+                    handleBillTableChange(pagination, filters, sorter, query);
                     setFileList([]);
                 } else {
                     message.error('上传失败');

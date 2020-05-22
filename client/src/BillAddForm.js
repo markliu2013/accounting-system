@@ -44,8 +44,8 @@ const BillAddForm = () => {
             success: (data) => {
                 if (data.success) {
                     message.success('添加成功');
-                    const { pagination, filters, sorter } = billTableState;
-                    handleBillTableChange(pagination, filters, sorter);
+                    const { pagination, filters, sorter, query } = billTableState;
+                    handleBillTableChange(pagination, filters, sorter, query);
                 } else {
                     message.error('添加失败');
                 }
