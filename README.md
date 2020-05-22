@@ -23,6 +23,7 @@ phpMyAdmin：[http://demo.zfwhub.com:8084/](http://demo.zfwhub.com:8084/)
 安装脚本：
 ```sh
   $ git clone --depth 1 https://github.com/markliu2013/accounting-system.git
+  $ cd accounting-system
   $ docker-compose up
 ```
 应用入口：[http://127.0.0.1:4000/](http://127.0.0.1:4000/)
@@ -52,4 +53,5 @@ phpMyAdmin：[http://127.0.0.1:8084/](http://127.0.0.1:8084/)
 4. 上传和新增账单等操作后，保存页面的排序，分页，搜索条件等信息不变。解决方法：排序，分页，搜索条件等抽离到全局状态管理。
 5. 前端输入的时间，mysql存储多出一秒。搜索解决，[https://blog.csdn.net/qq_38345296/article/details/99639376](https://blog.csdn.net/qq_38345296/article/details/99639376)
 6. 需求问题。问题1：账单类别和账单都有支出或收入。（忽略账单类别中的）问题2：账单金额已经有收入和支出区分，提供的csv数据还是有正负数。（没有处理）
+7. 前端删除账单操作是否适合做一个乐观更新？[乐观更新与保守更新](https://www.jianshu.com/p/154ca94f5209)
 7. springboot+reactjs 架构的最佳实践思考，提供一个项目作为架构的骨架代码。
