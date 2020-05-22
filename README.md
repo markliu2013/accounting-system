@@ -34,6 +34,11 @@ phpMyAdmin：[http://127.0.0.1:8084/](http://127.0.0.1:8084/)
 
 **注意**：在本地搭建的docker环境，如果应用中数据为空，需要先将server目录下的accounting_system.sql文件导入数据库（可以在phpMyAdmin执行导入操作），之后才能进行添加账单和上传账单的操作，因为程序暂时没有提供账单类别的增删改查接口。
 
+## 支持的浏览器
+1. Chrome
+2. Firefox
+3. Safari
+
 
 ## 关联技术
 
