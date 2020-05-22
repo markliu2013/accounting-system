@@ -12,11 +12,10 @@ services:
     ports:
       - "3306:3306"
     environment:
-      MYSQL_ROOT_HOST: ${MYSQL_ROOT_HOST}
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-      MYSQL_DATABASE: ${MYSQL_DATABASE}
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 123456
+      MYSQL_DATABASE: accounting_system
+      MYSQL_ROOT_PASSWORD: 123456
   accounting-system_phpmyadmin:
     links:
       - accounting-system_db:db
@@ -30,7 +29,7 @@ services:
       PMA_ARBITRARY: 0
       PMA_HOST: db
       PMA_USER: root
-      PMA_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      PMA_PASSWORD: 123456
   accounting-system_backend:
     build: ./server/
     container_name: accounting-system_spring-boot
