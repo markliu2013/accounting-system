@@ -70,7 +70,6 @@ const BillUpload = () => {
                 <p className="ant-upload-hint">
                     支持一个或多个文件上传，只能上传固定的CSV文件，请下载模板文件参考。
                 </p>
-                <p><a href="bill.csv">下载CSV模板文件</a></p>
             </Dragger>
 
             <Button
@@ -82,6 +81,7 @@ const BillUpload = () => {
                 >
                 {uploading ? '上传中...' : '开始上传'}
             </Button>
+            <a href="bill.csv" style={{ marginLeft: 16 }}>下载CSV模板文件</a>
         </div>
     );
 };

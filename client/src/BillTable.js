@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Table, Alert, message } from 'antd';
+import { Table, Alert, message, Button } from 'antd';
 import moment from 'moment';
 import reqwest from 'reqwest';
 
@@ -56,7 +56,7 @@ const BillTable = () => {
             title: '操作',
             dataIndex: '',
             key: 'x',
-            render: id => <a onClick={() => handleDelete(id)}>删除</a>
+            render: id => <Button onClick={() => handleDelete(id)}>删除</Button>
         }
     ];
 
