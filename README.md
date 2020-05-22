@@ -54,4 +54,4 @@ phpMyAdmin：[http://127.0.0.1:8084/](http://127.0.0.1:8084/)
 5. 前端输入的时间，mysql存储多出一秒。搜索解决，[https://blog.csdn.net/qq_38345296/article/details/99639376](https://blog.csdn.net/qq_38345296/article/details/99639376)
 6. 需求问题。问题1：账单类别和账单都有支出或收入。（忽略账单类别中的）问题2：账单金额已经有收入和支出区分，提供的csv数据还是有正负数。（没有处理）
 7. 前端删除账单操作是否适合做一个乐观更新？[乐观更新与保守更新](https://www.jianshu.com/p/154ca94f5209)
-7. springboot+reactjs 架构的最佳实践思考，提供一个项目作为架构的骨架代码。
+8. springboot+reactjs 架构的最佳实践思考，提供一个项目作为架构的骨架代码。
