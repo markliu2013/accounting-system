@@ -25,6 +25,8 @@ Swagger API：[http://localhost:8089/api/swagger-ui.html](http://localhost:8089/
 
 phpMyAdmin：[http://127.0.0.1:8084/](http://127.0.0.1:8084/)
 
+注意：如果数据为空，需要先将server目录下的accounting_system.sql文件导入数据库，可以在phpMyAdmin执行导入操作。
+
 
 ## 关联技术
 
