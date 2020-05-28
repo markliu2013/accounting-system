@@ -13,9 +13,9 @@ services:
       - "3306:3306"
     environment:
       MYSQL_USER: root
-      MYSQL_PASSWORD: 123456
+      MYSQL_PASSWORD: WTv7N6Ei
       MYSQL_DATABASE: accounting_system
-      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_ROOT_PASSWORD: WTv7N6Ei
   accounting-system_phpmyadmin:
     links:
       - accounting-system_db:db
@@ -29,7 +29,7 @@ services:
       PMA_ARBITRARY: 0
       PMA_HOST: db
       PMA_USER: root
-      PMA_PASSWORD: 123456
+      PMA_PASSWORD: WTv7N6Ei
   accounting-system_backend:
     build: ./server/
     container_name: accounting-system_spring-boot
