@@ -1,0 +1,246 @@
+{
+	"info": {
+		"_postman_id": "4ea1df9f-d51d-4565-ad13-7600e233af51",
+		"name": "accounting system",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "bill query",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{base_url}}/bills/?size=200",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"bills",
+						""
+					],
+					"query": [
+						{
+							"key": "year",
+							"value": "11",
+							"disabled": true
+						},
+						{
+							"key": "type",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "minAmount",
+							"value": "1000",
+							"disabled": true
+						},
+						{
+							"key": "maxAmount",
+							"value": "3000",
+							"disabled": true
+						},
+						{
+							"key": "categoryId",
+							"value": "5il79e11628",
+							"disabled": true
+						},
+						{
+							"key": "sort",
+							"value": "amount,asc",
+							"disabled": true
+						},
+						{
+							"key": "size",
+							"value": "200"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "bill add",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"type\": 0,\n\t\"time\": 1590050240617,\n\t\"categoryId\": \"5il79e11628\",\n\t\"amount\": 2002.23\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/bills/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"bills",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "bill upload",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "files",
+							"type": "file",
+							"src": "/Users/liumingwei/Downloads/bill (1).csv"
+						},
+						{
+							"key": "files",
+							"type": "file",
+							"src": "/Users/liumingwei/Downloads/bill (1).csv"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/bills/upload?files",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"bills",
+						"upload"
+					],
+					"query": [
+						{
+							"key": "files",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cagegory get all",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/categories/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"categories",
+						""
+					],
+					"query": [
+						{
+							"key": "year",
+							"value": "11",
+							"disabled": true
+						},
+						{
+							"key": "type",
+							"value": "0",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "bill delete",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"type\": 0,\n\t\"time\": \"d\",\n\t\"categoryId\": \"5il79e11628\",\n\t\"amount\": 2002.23\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/bills/",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"bills",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "c95c2a41-e742-4577-adab-c89f0754a394",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "02e3246b-788e-4448-91a8-30e3d0728dfd",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "eefa697f-2faa-4090-b54c-a45e15065cd8",
+			"key": "base_url",
+			"value": "http://localhost:8080/api",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
