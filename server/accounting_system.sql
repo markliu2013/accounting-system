@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: May 22, 2020 at 08:01 AM
+-- Generation Time: May 28, 2020 at 12:31 PM
 -- Server version: 5.7.30
 -- PHP Version: 7.4.5
 
@@ -26,10 +26,10 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `bill`
 --
-
 CREATE DATABASE IF NOT EXISTS accounting_system;
 
 use accounting_system;
+
 
 CREATE TABLE `bill` (
   `id` varchar(255) NOT NULL,
@@ -546,17 +546,17 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id`, `name`, `type`) VALUES
-('0fnhbcle6hg', '房屋租赁', 0),
-('1bcddudhmh', '车贷', 0),
-('1vjj47vpd28', '股票投资', 1),
-('3tqndrjqgrg', '日常饮食', 0),
-('5il79e11628', '基金投资', 1),
-('8s0p77c323', '房贷', 0),
-('bsn20th0k2o', '交通', 0),
-('hc5g66kviq', '车辆保养', 0),
-('j1h1nohhmmo', '旅游', 0),
-('odrjk823mj8', '家庭用品', 0),
-('s73ijpispio', '工资', 1);
+('0fnhbcle6hg', 'house rent', 0),
+('1bcddudhmh', 'car mortgage', 0),
+('1vjj47vpd28', 'stock investment', 1),
+('3tqndrjqgrg', 'diet', 0),
+('5il79e11628', 'fund investment', 1),
+('8s0p77c323', 'housing mortgage', 0),
+('bsn20th0k2o', 'traffic', 0),
+('hc5g66kviq', 'vehicle maintenance', 0),
+('j1h1nohhmmo', 'travel', 0),
+('odrjk823mj8', 'household effects', 0),
+('s73ijpispio', 'wage', 1);
 
 --
 -- Indexes for dumped tables

@@ -5,6 +5,7 @@ import BillTable from './BillTable';
 import BillUpload from './BillUpload';
 import BillAddForm from './BillAddForm';
 import BillSearchForm from './BillSearchForm';
+import { useTranslation } from 'react-i18next';
 
 import 'antd/dist/antd.css';
 import './App.css';
@@ -15,11 +16,11 @@ const { Header, Footer, Sider, Content } = Layout;
 
 
 const App = () => {
-
+    const { t } = useTranslation();
     return (
         <>
         <Layout>
-            <Header><h1>记账应用</h1></Header>
+            <Header><h1>{t('App Name')}</h1></Header>
             <Layout>
                 <Content>
                     <BillTable />

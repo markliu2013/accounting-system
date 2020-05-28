@@ -43,15 +43,15 @@ const BillAddForm = () => {
             data: jsonData,
             success: (data) => {
                 if (data.success) {
-                    message.success('添加成功');
+                    message.success('Add Successfully!');
                     const { pagination, filters, sorter, query } = billTableState;
                     handleBillTableChange(pagination, filters, sorter, query);
                 } else {
-                    message.error('添加失败');
+                    message.error('Add Fail!');
                 }
             },
             error: () => {
-                message.error('添加失败');
+                message.error('Add Fail!');
             }
         });
     };
@@ -73,28 +73,28 @@ const BillAddForm = () => {
             }}
             >
             <Form.Item
-                label="账单类型"
+                label="Bill Type"
                 name="type"
-                rules={[{ required: true, message: '请选择账单类型!' }]}
+                rules={[{ required: true, message: 'Please select a type!' }]}
             >
-                <Select placeholder="请选择账单类型">
-                    <Select.Option value={0}>支出</Select.Option>
-                    <Select.Option value={1}>收入</Select.Option>
+                <Select placeholder="Please select a type">
+                    <Select.Option value={0}>outcome</Select.Option>
+                    <Select.Option value={1}>income</Select.Option>
                 </Select>
             </Form.Item>
             <Form.Item
                 name="time"
-                label="账单时间"
-                rules={[{ type: 'object', required: true, message: '请选择账单时间!' }]}
+                label="Bill Time"
+                rules={[{ type: 'object', required: true, message: 'Please select bill time!' }]}
             >
                 <DatePicker showTime format="YYYY-MM-DD HH:mm:ss" />
             </Form.Item>
             <Form.Item
-                label="账单类别"
+                label="Bill Category"
                 name="categoryId"
-                rules={[{ required: true, message: '请选择账单类别!' }]}
+                rules={[{ required: true, message: 'Please select bill category!' }]}
             >
-                <Select placeholder="请选择账单类别">
+                <Select placeholder="Please select bill category">
                     { categories.map((c, i) => {
                         return (<Select.Option key={c.id} value={c.id}>{c.name}</Select.Option>)
                     })}
@@ -102,14 +102,14 @@ const BillAddForm = () => {
             </Form.Item>
             <Form.Item
                 name="amount"
-                label="账单金额"
-                rules={[{ required: true, message: '请选择账单类别!' }]}
+                label="Bill Amount"
+                rules={[{ required: true, message: 'Please type bill amount!' }]}
             >
                 <InputNumber min={0} step={0.1} precision={2} />
             </Form.Item>
             <Form.Item {...tailLayout}>
                 <Button type="primary" htmlType="submit">
-                    新增账单
+                    Add Bill
                 </Button>
                 <Button
                     style={{ margin: '0 8px'}}
@@ -117,7 +117,7 @@ const BillAddForm = () => {
                         form.resetFields();
                     }}
                 >
-                    重置
+                    Reset
                 </Button>
             </Form.Item>
         </Form>

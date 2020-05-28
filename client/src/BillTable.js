@@ -10,15 +10,15 @@ const BillTable = () => {
 
     const columns = [
         {
-            title: '类型',
+            title: 'Type',
             dataIndex: 'type',
             sorter: true,
             render: type => {
                 let typeVal = '';
                 if (type === 1) {
-                    typeVal = '收入';
+                    typeVal = 'income';
                 } else if (type === 0) {
-                    typeVal = '支出';
+                    typeVal = 'outcome';
                 }
                 return (
                     <>
@@ -29,7 +29,7 @@ const BillTable = () => {
             width: '20%'
         },
         {
-            title: '时间',
+            title: 'Time',
             dataIndex: 'time',
             sorter: true,
             render: time => {
@@ -43,20 +43,20 @@ const BillTable = () => {
             width: '20%'
         },
         {
-            title: '类别',
+            title: 'Category',
             sorter: true,
             dataIndex: 'categoryName'
         },
         {
-            title: '金额',
+            title: 'Amount',
             sorter: true,
             dataIndex: 'amount'
         },
         {
-            title: '操作',
+            title: 'Operation',
             dataIndex: '',
             key: 'x',
-            render: id => <Button onClick={() => handleDelete(id)}>删除</Button>
+            render: id => <Button onClick={() => handleDelete(id)}>Remove</Button>
         }
     ];
 
@@ -80,15 +80,15 @@ const BillTable = () => {
             method: 'delete',
             success: (data) => {
                 if (data.success) {
-                    message.success('删除成功');
+                    message.success('Remove Successfully!');
                     const { pagination, filters, sorter } = billTableState;
                     handleBillTableChange(pagination, filters, sorter);
                 } else {
-                    message.error('删除失败');
+                    message.error('Remove Failed');
                 }
             },
             error: () => {
-                message.error('删除失败');
+                message.error('Remove Failed');
             }
         });
         console.log(id);
@@ -99,7 +99,7 @@ const BillTable = () => {
         <Alert
             type="info"
             description = {
-                <p>支出总金额：<span style={{color: 'red'}}>{billTableState.out}</span>元；收入总金额：<span style={{color: 'green'}}>{billTableState.in}</span>元。</p>
+                <p>Out come total：<span style={{color: 'red'}}>{billTableState.out}</span>$; Income total：<span style={{color: 'green'}}>{billTableState.in}</span>$.</p>
             }
         />
         <Table

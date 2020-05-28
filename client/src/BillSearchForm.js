@@ -56,20 +56,20 @@ const BillSearchForm = () => {
             onFinishFailed={onFinishFailed}
         >
             <Form.Item
-                label="账单类型"
+                label="Bill Type"
                 name="type"
             >
-                <Select placeholder="请选择账单类型">
-                    <Select.Option value={0}>支出</Select.Option>
-                    <Select.Option value={1}>收入</Select.Option>
+                <Select placeholder="Please select a type">
+                    <Select.Option value={0}>outcome</Select.Option>
+                    <Select.Option value={1}>income</Select.Option>
                 </Select>
             </Form.Item>
 
             <Form.Item
-                label="账单类别"
+                label="Bill Category"
                 name="categoryId"
             >
-                <Select placeholder="请选择账单类别">
+                <Select placeholder="Please select bill category">
                     { categories.map((c, i) => {
                         return (<Select.Option key={c.id} value={c.id}>{c.name}</Select.Option>)
                     })}
@@ -77,11 +77,11 @@ const BillSearchForm = () => {
             </Form.Item>
             <Form.Item
                 name="time"
-                label="账单月份"
+                label="Bill Month"
                 >
                 <DatePicker picker="month" format="YYYY-MM" />
             </Form.Item>
-            <Form.Item label="账单金额">
+            <Form.Item label="Bill Amount">
                 <Form.Item name="minAmount" style={{ display: 'inline-block'}}>
                     <InputNumber min={0} step={0.1} precision={2} />
                 </Form.Item>
@@ -94,7 +94,7 @@ const BillSearchForm = () => {
             </Form.Item>
             <Form.Item {...tailLayout}>
                 <Button type="primary" htmlType="submit">
-                    查询账单
+                    Search Bill
                 </Button>
                 <Button
                     style={{ margin: '0 8px'}}
@@ -102,7 +102,7 @@ const BillSearchForm = () => {
                         form.resetFields();
                     }}
                 >
-                    重置
+                    Reset
                 </Button>
             </Form.Item>
         </Form>

@@ -28,17 +28,17 @@ const BillUpload = () => {
             success: (data) => {
                 setUploading(false);
                 if (data.success) {
-                    message.success('上传成功');
+                    message.success('Upload Successfully!');
                     const { pagination, filters, sorter, query } = billTableState;
                     handleBillTableChange(pagination, filters, sorter, query);
                     setFileList([]);
                 } else {
-                    message.error('上传失败');
+                    message.error('Upload Failed');
                 }
             },
             error: () => {
                 setUploading(false);
-                message.error('上传失败');
+                message.error('Upload Failed');
             },
         });
     }
@@ -66,9 +66,9 @@ const BillUpload = () => {
                 <p className="ant-upload-drag-icon">
                     <InboxOutlined />
                 </p>
-                <p className="ant-upload-text">将CSV文件拖到此区域，然后点击提交。</p>
+                <p className="ant-upload-text">Click or drag csv file to this area to upload</p>
                 <p className="ant-upload-hint">
-                    支持一个或多个文件上传，只能上传固定的CSV文件，请下载模板文件参考。
+                    Support for a single or bulk upload. Please Download the template csv file, only the template format supported.
                 </p>
             </Dragger>
 
@@ -79,9 +79,9 @@ const BillUpload = () => {
                 loading={uploading}
                 style={{ marginTop: 16 }}
                 >
-                {uploading ? '上传中...' : '开始上传'}
+                {uploading ? 'Uploading...' : 'Start Upload'}
             </Button>
-            <a href="bill.csv" style={{ marginLeft: 16 }}>下载CSV模板文件</a>
+            <a href="bill.csv" style={{ marginLeft: 16 }}>Download CSV Template File</a>
         </div>
     );
 };
