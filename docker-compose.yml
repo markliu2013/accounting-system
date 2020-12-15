@@ -9,8 +9,6 @@ services:
       - ./server/accounting_system.sql:/docker-entrypoint-initdb.d/accounting_system.sql #导入初始数据
       #- ./mysql/config:/etc/mysql/conf.d
     restart: always
-    ports:
-      - "3306:3306"
     environment:
       MYSQL_USER: root
       MYSQL_PASSWORD: WTv7N6Ei
