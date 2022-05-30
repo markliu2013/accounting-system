@@ -1,18 +1,3 @@
-# 简易记账本
-
-[https://github.com/xmindltd/hiring/tree/master/frontend-1](https://github.com/xmindltd/hiring/tree/master/frontend-1)
-
-## 在线运行效果
-
-应用入口：[http://demo.zfwhub.com:4000/](http://demo.zfwhub.com:4000/)
-
-Swagger API：[http://demo.zfwhub.com:8089/api/swagger-ui.html](http://demo.zfwhub.com:8089/api/swagger-ui.html)
-
-phpMyAdmin：[http://demo.zfwhub.com:8084/](http://demo.zfwhub.com:8084/)
-
-已完成基本需求和附加需求。
-
-
 ## 安装
 使用docker和docker compose安装，请先安装对应平台的docker和docker compose。
 
