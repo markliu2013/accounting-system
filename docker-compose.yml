@@ -7,11 +7,9 @@ services:
     volumes:
       - accounting-system_data:/var/lib/mysql           # 挂载数据目录
       - ./server/accounting_system.sql:/docker-entrypoint-initdb.d/accounting_system.sql #导入初始数据
-      #- ./mysql/config:/etc/mysql/conf.d
+      # - ./mysql/config:/etc/mysql/conf.d
     restart: always
     environment:
-      MYSQL_USER: root
-      MYSQL_PASSWORD: WTv7N6Ei
       MYSQL_DATABASE: accounting_system
       MYSQL_ROOT_PASSWORD: WTv7N6Ei
   accounting-system_phpmyadmin:
